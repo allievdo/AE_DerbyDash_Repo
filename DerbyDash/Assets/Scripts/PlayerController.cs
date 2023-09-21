@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+
+        Debug.Log("Sprint");
+        rb.velocity = new Vector2(runningForce, 0f);
+        /*if (Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log("Sprint");
-            rb.velocity = new Vector2(runningForce, 0f);
-        }
+         
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
