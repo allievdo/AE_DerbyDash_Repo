@@ -10,26 +10,36 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
-        Debug.Log("Sprint");
-        rb.velocity = new Vector2(runningForce, 0f);
-        /*if (Input.GetKeyDown(KeyCode.D))
+        if(GameManager.instance.gamePlaying)
         {
-         
-        }*/
+            PlayerRun();
+        }
+
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    void PlayerRun()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            rb.velocity = new Vector2(runningForce, 0f);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector2(speedBoost, 0f);
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             rb.velocity = new Vector2(runningForce, 0f);
         }
     }
-    void FixedUpdate()
+  /*  void FixedUpdate()
     {
-       // rb.velocity = new Vector2(runningForce, 0f);
-    }
+       rb.velocity = new Vector2(runningForce, 0f);
+    } */
 }

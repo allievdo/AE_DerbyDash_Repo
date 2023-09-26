@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -10,11 +11,29 @@ public class EnemyController : MonoBehaviour
     public int maxSpeed;
     public int minSpeed;
 
+    int enemySpeed;
 
+
+    void Start()
+    {
+        enemySpeed = Random.Range(minSpeed, maxSpeed);
+    }
     void Update()
     {
-        int enemySpeed = Random.Range(minSpeed, maxSpeed);
-        Debug.Log("Current enemy speed: " + enemySpeed);
+        if (GameManager.instance.gamePlaying)
+        {
+            EnemyRun();
+        }
+
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    void EnemyRun()
+    {
+        //Debug.Log("Current enemy speed: " + enemySpeed);
         rb.velocity = new Vector2(enemySpeed, 0f);
     }
 }
