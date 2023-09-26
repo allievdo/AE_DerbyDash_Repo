@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject player;
 
-    public int money = 0;
+    public int money;
 
     void Awake()
     {
