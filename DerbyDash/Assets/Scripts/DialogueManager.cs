@@ -38,8 +38,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
 
+
+            EndDialogue();
             SceneManager.LoadScene("RaceScene");
             //return;
         }
