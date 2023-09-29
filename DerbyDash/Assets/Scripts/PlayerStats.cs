@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static PlayerStats playerStats;
+    public int currentMoney;
 
-    public GameObject player;
-
-    public int money;
+    public static PlayerStats instance;
 
     void Awake()
     {
-        if(playerStats != null)
+        if(instance == null)
         {
-            Destroy(playerStats);
+            instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
-            playerStats = this;
+            Destroy(this.gameObject);
         }
+    }
+
+    public int GetCurrentMoney()
+    {
+        return currentMoney;
     }
 }
