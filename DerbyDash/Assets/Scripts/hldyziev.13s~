@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
-    private DialogueTrigger _dialogueTrigger;
+    DialogueTrigger _dialogueTrigger;
 
     public Animator animator;
 
@@ -40,8 +40,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+            //Get rid of button
+
             EndDialogue();
-            _dialogueTrigger.startConversationButton.SetActive(false);
+            SceneManager.LoadScene("RaceScene");
             //return;
         }
 
