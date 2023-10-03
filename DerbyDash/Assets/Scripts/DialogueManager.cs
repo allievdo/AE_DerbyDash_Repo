@@ -48,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-        Debug.Log("HELLOO???");
         OnDialogueOpen?.Invoke(true);
 
         OnDialogueName?.Invoke(dialogue.name);
