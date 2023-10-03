@@ -4,16 +4,42 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Hello Professor Slease!!! :) How are you?
 public class DialogueManager : MonoBehaviour
 {
+    public delegate void DialogueOpen(bool value);
+    public delegate void DialogueText(string dialogueText);
+
+    public static event DialogueText OnDialogueText;
+    public static event DialogueText OnDialogueName;
+    public static event DialogueOpen OnDialogueOpen;
+
     public Text nameText;
     public Text dialogueText;
 
+    //NEW
+    private bool raceOneEnded = false;
+    private bool homeTwoStarted = false;
+
     private DialogueTrigger _dialogueTrigger;
 
-    public Animator animator;
-
     private Queue<string> sentences;
+
+    //public static DialogueManager instance;
+
+    //NEW
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(this);
+    //    }
+    //    else
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 
     void Start()
     {
@@ -22,9 +48,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", true);
+        Debug.Log("HELLOO???");
+        OnDialogueOpen?.Invoke(true);
 
-        nameText.text = dialogue.name;
+        OnDialogueName?.Invoke(dialogue.name);
 
         sentences.Clear();
 
@@ -40,8 +67,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+            SceneManager.LoadScene("RaceScene");
             EndDialogue();
-            _dialogueTrigger.startConversationButton.SetActive(false);
             //return;
         }
 
@@ -52,16 +79,19 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        dialogueText.text = "";
+        string dialogueText = "";
         foreach( char letter in sentence.ToCharArray() )
         {
-            dialogueText.text += letter;
+            dialogueText += letter;
+            OnDialogueText?.Invoke(dialogueText);
             yield return null;
         }
     }
 
     void EndDialogue ()
     {
-        animator.SetBool("IsOpen", false);
+        OnDialogueOpen?.Invoke(false);
+        //NEW
+        //raceOneEnded = true;
     }
 }
