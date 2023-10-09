@@ -10,3 +10,13 @@ Added other racers to the race scene, set their speed to a random number, once d
 
 Things added 9/25/2023 - 10/02/2023:
 Created a stable scene and added a pause menu. Earnings after a race carry over to the home scene and every time you win a race, more money is added. Speed boost only holds for a certain amount of seconds, you can no longer continuously speed through the race. Dialogue now continues playing even after changing the scene.
+
+Things added 10/02/2023 - 10/09/2023:
+Added a shop scene in the stable scene. I also added another scene where you can now select a difficulty for the races: medium or easy. If you enter a race and and come back to the home screen, the dialogue should change (issue is, the continue button no longer works - will attempt to fix for next week). In the shop scene, you can click on an option and it will take money from you inventory.
+
+Video tutorials used:
+Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
+Countdown timer: https://www.youtube.com/watch?v=ulxXGht5D2U
+Dialogue help: https://www.youtube.com/watch?v=_nRzoTzeyxU
+Shop UI (will probably change): https://www.youtube.com/watch?v=HuXy4XX0hzg&t=431s
+Camera set up: https://www.youtube.com/watch?v=2jTY11Am0Ig&list=PLPV2KyIb3jR6TFcFuzI2bB7TMNIIBpKMQ&index=5
