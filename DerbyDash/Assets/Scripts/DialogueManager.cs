@@ -17,29 +17,28 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
-    //NEW
-    private bool raceOneEnded = false;
-    private bool homeTwoStarted = false;
+    //NEW 10/02/2023
+    public bool raceOneEnded = false;
 
-    private DialogueTrigger _dialogueTrigger;
+    //private DialogueTrigger _dialogueTrigger;
 
     private Queue<string> sentences;
 
-    //public static DialogueManager instance;
+    public static DialogueManager instance;
 
     //NEW
-    //private void Awake()
-    //{
-    //    if (instance == null)
-    //    {
-    //        instance = this;
-    //        DontDestroyOnLoad(this);
-    //    }
-    //    else
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //}
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     void Start()
     {
@@ -62,6 +61,27 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    //NEW 10/03/2023
+    //Sentence 2
+    public void StartDialogueTwo (Dialogue dialogueTwo)
+    {
+        if (raceOneEnded == true)
+        {
+            OnDialogueOpen?.Invoke(true);
+
+            OnDialogueName?.Invoke(dialogueTwo.name);
+
+            sentences.Clear();
+
+            foreach (string sentence in dialogueTwo.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
+
+            DisplayNextSentence();
+        }
+    }
+
     public void DisplayNextSentence ()
     {
         if (sentences.Count == 0)
@@ -78,7 +98,9 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
+        Debug.Log("Continue dialogue");
         string dialogueText = "";
+
         foreach( char letter in sentence.ToCharArray() )
         {
             dialogueText += letter;
@@ -90,7 +112,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue ()
     {
         OnDialogueOpen?.Invoke(false);
-        //NEW
-        //raceOneEnded = true;
+
+        //NEW 10/03/2023
+        raceOneEnded = true;
+        Debug.Log("Race one ended = true");
     }
 }

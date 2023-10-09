@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//Obatined help from Jacob Jeffcoat
 public class DialogueAnimator : MonoBehaviour
 {
     public Animator animator;
     public Text dialogueText;
     public Text nameText;
+
     private void Start()
     {
         Time.timeScale = 1f;
