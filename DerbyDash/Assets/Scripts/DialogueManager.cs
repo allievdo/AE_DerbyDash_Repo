@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     //private DialogueTrigger _dialogueTrigger;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     public static DialogueManager instance;
 

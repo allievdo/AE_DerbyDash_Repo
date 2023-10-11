@@ -11,6 +11,19 @@ public class DialogueAnimator : MonoBehaviour
     public Text dialogueText;
     public Text nameText;
 
+    public static DialogueAnimator instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+
+        else
+            Destroy(this.gameObject);
+    }
     private void Start()
     {
         Time.timeScale = 1f;
