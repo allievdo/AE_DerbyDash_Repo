@@ -33,11 +33,16 @@ public class PlayerController : MonoBehaviour
         }
 
         //NEW
-        if (Input.GetKey(KeyCode.Space))
+        if (PlayerStats.instance.currentCarrots > 0)
         {
-            rb.velocity = new Vector2(speedBoost, 0f);
-            Debug.Log("Speed boost");
-            StartCoroutine(SpeedDuration());
+            if (Input.GetKey(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(speedBoost, 0f);
+                Debug.Log("Speed boost");
+                StartCoroutine(SpeedDuration());
+
+                CarrotDown();
+            }
         }
 
         //FOR TESTING PURPOSES:
@@ -50,6 +55,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(runningForce, 0f);
         } */
+    }
+
+    void CarrotDown()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            PlayerStats.instance.currentCarrots -= 1;//make it go down by one
+            Debug.Log("carrots down");
+        }
     }
 
     IEnumerator SpeedDuration()

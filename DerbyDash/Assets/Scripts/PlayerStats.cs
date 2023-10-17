@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public int currentMoney;
+    public int currentCarrots;
 
     public static PlayerStats instance;
 
@@ -25,5 +26,10 @@ public class PlayerStats : MonoBehaviour
     public int GetCurrentMoney()
     {
         return currentMoney;
+    }
+
+    public int GetCurrentCarrots()
+    {
+        return currentCarrots;
     }
 }
