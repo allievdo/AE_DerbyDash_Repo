@@ -14,10 +14,15 @@ Created a stable scene and added a pause menu. Earnings after a race carry over 
 Things added 10/02/2023 - 10/09/2023:
 Added a shop scene in the stable scene. I also added another scene where you can now select a difficulty for the races: medium or easy. If you enter a race and and come back to the home screen, the dialogue should change (issue is, the continue button no longer works - will attempt to fix for next week). In the shop scene, you can click on an option and it will take money from you inventory.
 
+Things added 10/09/2023 - 10/16/2023
+You can buy up to three carrots in the shop now and use the carrots during the race for a speed boost (this isn't working properly yet. Fix for next week). A painted background was also added to the home scene. 
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
+
 Countdown timer: https://www.youtube.com/watch?v=ulxXGht5D2U
+
 Dialogue help: https://www.youtube.com/watch?v=_nRzoTzeyxU
-Shop UI (will probably change): https://www.youtube.com/watch?v=HuXy4XX0hzg&t=431s
+
 Camera set up: https://www.youtube.com/watch?v=2jTY11Am0Ig&list=PLPV2KyIb3jR6TFcFuzI2bB7TMNIIBpKMQ&index=5
