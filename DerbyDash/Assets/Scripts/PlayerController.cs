@@ -33,15 +33,15 @@ public class PlayerController : MonoBehaviour
         }
 
         //NEW
-        if (PlayerStats.instance.currentCarrots > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKey(KeyCode.Space))
+            if(PlayerStats.instance.currentCarrots > 0)
             {
+                CarrotDown();
+
                 rb.velocity = new Vector2(speedBoost, 0f);
                 Debug.Log("Speed boost");
                 StartCoroutine(SpeedDuration());
-
-                CarrotDown();
             }
         }
 

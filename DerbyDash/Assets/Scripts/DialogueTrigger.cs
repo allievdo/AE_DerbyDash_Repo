@@ -13,19 +13,6 @@ public class DialogueTrigger : MonoBehaviour
     //NEW 10/03/2023
     public Dialogue dialogueTwo;
 
-    public static DialogueTrigger instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-
-        else
-            Destroy(this.gameObject);
-    }
     public void TriggerDialogue ()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);

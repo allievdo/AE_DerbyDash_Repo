@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 0
-  currentCarrots: 3
+  currentCarrots: 0
 --- !u!4 &1306450076
 Transform:
   m_ObjectHideFlags: 0
