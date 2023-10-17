@@ -15,6 +15,7 @@ Things added 10/02/2023 - 10/09/2023:
 Added a shop scene in the stable scene. I also added another scene where you can now select a difficulty for the races: medium or easy. If you enter a race and and come back to the home screen, the dialogue should change (issue is, the continue button no longer works - will attempt to fix for next week). In the shop scene, you can click on an option and it will take money from you inventory.
 
 Video tutorials used:
+
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
 Countdown timer: https://www.youtube.com/watch?v=ulxXGht5D2U
 Dialogue help: https://www.youtube.com/watch?v=_nRzoTzeyxU
