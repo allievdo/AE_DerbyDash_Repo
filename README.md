@@ -17,6 +17,9 @@ Added a shop scene in the stable scene. I also added another scene where you can
 Things added 10/09/2023 - 10/16/2023
 You can buy up to three carrots in the shop now and use the carrots during the race for a speed boost (this isn't working properly yet. Fix for next week). A painted background was also added to the home scene. 
 
+Things added 10/16/2023
+The number of carrots you have counts down when you use one. Your horse is now shown in the main menu and she neighs when clicked on. I also drew a race background that appears during the races.
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
