@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
 
     int enemySpeed;
 
+    public Animator animator;
+
 
     void Start()
     {
@@ -35,5 +37,6 @@ public class EnemyController : MonoBehaviour
     {
         //Debug.Log("Current enemy speed: " + enemySpeed);
         rb.velocity = new Vector2(enemySpeed, 0f);
+        animator.SetFloat("Speed", enemySpeed);
     }
 }

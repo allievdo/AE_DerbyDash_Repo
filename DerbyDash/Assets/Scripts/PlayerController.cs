@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public float speedCooldown;
 
+    public Animator animator;
+
     void Update()
     {
         if(GameManager.instance.gamePlaying)
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             rb.velocity = new Vector2(runningForce, 0f);
+            animator.SetFloat("Speed", 1);
         }
 
         //NEW
@@ -42,8 +45,12 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(speedBoost, 0f);
                 Debug.Log("Speed boost");
                 StartCoroutine(SpeedDuration());
+                animator.SetFloat("Speed", speedBoost);
             }
         }
+
+        else
+            animator.SetFloat("Speed", 1);
 
         //FOR TESTING PURPOSES:
         /*if (Input.GetKeyDown(KeyCode.Space))
