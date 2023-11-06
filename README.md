@@ -36,3 +36,5 @@ Camera set up: https://www.youtube.com/watch?v=2jTY11Am0Ig&list=PLPV2KyIb3jR6TFc
 Animation set up: https://www.youtube.com/watch?v=hkaysu1Z-N8
 
 Horse neigh sound effect clip: https://www.youtube.com/watch?v=O0hvVSGQn4s
+
+Horse Gallop SFX: https://opengameart.org/content/horse-gallop-loop
