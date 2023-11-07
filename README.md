@@ -24,7 +24,7 @@ Things added 10/24/2023 - 10/31/2023
 I added horse aniamtions of various colors for the race scene and made the aniamtion play faster for the player depending on whether or not a speed boost was used.
 
 Things added 10/31/2023 - 11/07/2023
-Added a dollar sign in front of the money so you know what that number represents. Retyped race instructions in the race scene. Added a win and lose screen and added a background for the race selection scene. The dialogue changes after the first race and the buttons become available after your first race. I also added more dialogue for your cousin before the first race begins. Your cousin also gives you two carrots at the beginning of the game, since the shop is not yet available. You can no longer go into debt when purchasing carrots. When you win a race at medium difficulty, you now earn 70 dollars instead of 50.
+Added a dollar sign in front of the money so you know what that number represents. Retyped race instructions in the race scene. Added a win and lose screen and added a background for the race selection scene. The dialogue changes after the first race and the buttons become available after your first race. I also added more dialogue for your cousin before the first race begins. Your cousin also gives you two carrots at the beginning of the game, since the shop is not yet available. You can no longer go into debt when purchasing carrots. When you win a race at medium difficulty, you now earn 70 dollars instead of 50. You can now click anywhere in the dialogue box to continue.
 
 Video tutorials used:
 
