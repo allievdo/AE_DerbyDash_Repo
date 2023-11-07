@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     //DialogueManager _dialogueManager;
 
     //NEW 10/03/2023
-    public Dialogue dialogueTwo;
+    //public Dialogue dialogueTwo;
 
     public void TriggerDialogue ()
     {
@@ -19,8 +19,8 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //NEW 10/03/2023
-    public void TriggerDialogueTwo()
-    {
-        FindObjectOfType<DialogueManager>().StartDialogueTwo(dialogueTwo);
-    }
+    //public void TriggerDialogueTwo()
+    //{
+    //    FindObjectOfType<DialogueManager>().StartDialogueTwo(dialogueTwo);
+    //}
 }

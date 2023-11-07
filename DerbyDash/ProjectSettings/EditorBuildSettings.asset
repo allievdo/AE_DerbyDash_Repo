@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/HomeSceneMain.unity
+    guid: e7f5947e704ef6d4787a671cf6b9b5b7
+  - enabled: 1
     path: Assets/Scenes/RaceScene.unity
     guid: 951a7fba92e994e44b66de7204636d37
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RaceSceneMedium.unity
     guid: d6cdfb0649065214d8f703bbc5ae678d
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/RaceSelection.unity
     guid: 290696f72df8ceb46920d3a713d29a1d

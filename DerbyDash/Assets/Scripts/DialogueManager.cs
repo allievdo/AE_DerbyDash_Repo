@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-//Hello Professor Slease!!! :) How are you?
 public class DialogueManager : MonoBehaviour
 {
     public delegate void DialogueOpen(bool value);
@@ -18,27 +17,27 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
 
     //NEW 10/02/2023
-    public bool raceOneEnded = false;
+    //public bool raceOneEnded = false;
 
     //private DialogueTrigger _dialogueTrigger;
 
     public Queue<string> sentences;
 
-    public static DialogueManager instance;
+    //public static DialogueManager instance;
 
     //NEW
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(this);
+    //    }
+    //    else
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 
     void Start()
     {
@@ -63,32 +62,44 @@ public class DialogueManager : MonoBehaviour
 
     //NEW 10/03/2023
     //Sentence 2
-    public void StartDialogueTwo (Dialogue dialogueTwo)
-    {
-        if (raceOneEnded == true)
-        {
-            OnDialogueOpen?.Invoke(true);
+    //public void StartDialogueTwo (Dialogue dialogueTwo)
+    //{
+    //    if (raceOneEnded == true)
+    //    {
+    //        OnDialogueOpen?.Invoke(true);
 
-            OnDialogueName?.Invoke(dialogueTwo.name);
+    //        OnDialogueName?.Invoke(dialogueTwo.name);
 
-            sentences.Clear();
+    //        sentences.Clear();
 
-            foreach (string sentence in dialogueTwo.sentences)
-            {
-                sentences.Enqueue(sentence);
-            }
+    //        foreach (string sentence in dialogueTwo.sentences)
+    //        {
+    //            sentences.Enqueue(sentence);
+    //        }
 
-            DisplayNextSentence();
-        }
-    }
+    //        DisplayNextSentence();
+    //    }
+    //}
 
     public void DisplayNextSentence ()
     {
-        if (sentences.Count == 0)
+        if (SceneManager.GetActiveScene().name == "HomeSceneMain")
         {
-            SceneManager.LoadScene("RaceScene");
-            EndDialogue();
-            //return;
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
+        }
+
+        else
+        {
+            if (sentences.Count == 0)
+            {
+                EndDialogue();
+                SceneManager.LoadScene("RaceScene");
+                return;
+            }
         }
 
         string sentence = sentences.Dequeue();
@@ -114,7 +125,7 @@ public class DialogueManager : MonoBehaviour
         OnDialogueOpen?.Invoke(false);
 
         //NEW 10/03/2023
-        raceOneEnded = true;
-        Debug.Log("Race one ended = true");
+        //raceOneEnded = true;
+        //Debug.Log("Race one ended = true");
     }
 }

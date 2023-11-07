@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource gallop;
+
+
     void Update()
     {
         if(GameManager.instance.gamePlaying)
@@ -33,6 +36,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(runningForce, 0f);
             animator.SetFloat("Speed", 1);
+
+            //gallop.Play();
         }
 
         //NEW
@@ -71,6 +76,11 @@ public class PlayerController : MonoBehaviour
             PlayerStats.instance.currentCarrots -= 1;//make it go down by one
             Debug.Log("carrots down");
         }
+    }
+
+    void PlayGallop()
+    {
+        gallop.Play();
     }
 
     IEnumerator SpeedDuration()

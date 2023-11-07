@@ -15,11 +15,11 @@ public class FinishLine : MonoBehaviour
 
     public GameObject loseScreenUI;
 
-    private int raceAmount = 50;
+    public int raceAmount = 50;
 
     private void Start()
     {
-        raceAmountText.text = PlayerStats.instance.currentMoney.ToString();
+        raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +36,7 @@ public class FinishLine : MonoBehaviour
             //Debug.Log("Your current amount is: " + PlayerStats.instance.GetCurrentMoney());
             //Debug.Log("GameManager current money: " + PlayerStats.instance.currentMoney);
 
-            raceAmountText.text = PlayerStats.instance.currentMoney.ToString();
+            raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
         }
 
         if (collision.tag == "Enemy")

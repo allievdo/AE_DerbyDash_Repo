@@ -437,7 +437,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space gives speed boost
+  m_text: 'Press D to go.
+
+    Space gives speed boost'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2042,6 +2044,7 @@ MonoBehaviour:
   speedBoost: 6
   speedCooldown: 1
   animator: {fileID: 1255631948}
+  gallop: {fileID: 0}
 --- !u!50 &1255631946
 Rigidbody2D:
   serializedVersion: 4
@@ -2832,6 +2835,7 @@ MonoBehaviour:
   raceAmountText: {fileID: 383790468}
   winScreenUI: {fileID: 1928977705}
   loseScreenUI: {fileID: 2089635418}
+  raceAmount: 70
 --- !u!1 &1809109315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,6 +3046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c4ef1ca72b1b149858c855977f6e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   pauseMenu: {fileID: 1809109315}
 --- !u!1 &1928977705
 GameObject:

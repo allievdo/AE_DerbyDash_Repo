@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c4ef1ca72b1b149858c855977f6e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   pauseMenu: {fileID: 1269181352}
 --- !u!114 &507906615
 MonoBehaviour:
@@ -813,7 +814,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 625157825}
   dialogueText: {fileID: 1649289768}
-  raceOneEnded: 0
 --- !u!4 &524889091
 Transform:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 100
-  currentCarrots: 0
+  currentCarrots: 2
 --- !u!4 &564320229
 Transform:
   m_ObjectHideFlags: 0
@@ -1585,8 +1585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.6, y: -35.19597}
-  m_SizeDelta: {x: 132.1207, y: 22.8081}
+  m_AnchoredPosition: {x: -0.19706, y: 1.7}
+  m_SizeDelta: {x: 597.86, y: 96.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152789629
 MonoBehaviour:
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1793,7 +1793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 242, y: -35}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457061173
@@ -1935,7 +1935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1708302204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2188,13 +2188,12 @@ MonoBehaviour:
     - Hey Cuz! Welcome to Vermont! How was your flight?
     - Glad to hear that. I wish my father was here to greet you as well, but unfortuantely
       he is away on a business trip at the moment.
-    - Anyway, let me show you around.
-  dialogueTwo:
-    name: Cousin
-    sentences:
-    - Hey good job, cuz!
-    - I think you're ready to carry out this racing business by yourself, yeah?
-    - If you need me, I'll be in the stable
+    - You haven't seen Molly in person yet, right? She's back there grazing in the
+      pasture. She's pretty, yeah?
+    - I need to get you ready for the race, though!
+    - I will give you 2 carrots to get you started. Use these to go faster during
+      the race.
+    - Molly looks like she's ready to go! Let's get going.
 --- !u!114 &1812552291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2398,7 +2397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1910237596
 RectTransform:
   m_ObjectHideFlags: 0

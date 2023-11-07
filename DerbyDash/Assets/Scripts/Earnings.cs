@@ -9,6 +9,6 @@ public class Earnings : MonoBehaviour
 
     private void Start()
     {
-        raceAmountText.text = PlayerStats.instance.currentMoney.ToString();
+        raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
     }
 }

@@ -7,6 +7,6 @@ public class BackToHomeButton : MonoBehaviour
 {
     public void GoBack()
     {
-        SceneManager.LoadScene("HomeScene");
+        SceneManager.LoadScene("HomeSceneMain");
     }
 }

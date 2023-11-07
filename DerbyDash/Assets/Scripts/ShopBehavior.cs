@@ -12,16 +12,24 @@ public class ShopBehavior : MonoBehaviour
 
     public void CarrotButtonClicked()
     {
-        if (PlayerStats.instance.currentCarrots >= 3)
+        if (PlayerStats.instance.currentMoney >= 30)
         {
-            Debug.Log("No more carrots allowed");
+            if (PlayerStats.instance.currentCarrots >= 3)
+            {
+                Debug.Log("No more carrots allowed");
+            }
+            else
+            {
+                PlayerStats.instance.currentMoney -= 30;
+                raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
+                PlayerStats.instance.currentCarrots += 1;
+                numOfCarrots.text = PlayerStats.instance.currentCarrots.ToString() + " carrots";
+            }
         }
+
         else
         {
-            PlayerStats.instance.currentMoney -= 30;
-            raceAmountText.text = PlayerStats.instance.currentMoney.ToString();
-            PlayerStats.instance.currentCarrots += 1;
-            numOfCarrots.text = PlayerStats.instance.currentCarrots.ToString() + " carrots";
+            Debug.Log("You do not have enough money for this item");
         }
     }
 }
