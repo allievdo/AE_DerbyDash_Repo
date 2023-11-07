@@ -1585,8 +1585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.6, y: -35.19597}
-  m_SizeDelta: {x: 132.1207, y: 22.8081}
+  m_AnchoredPosition: {x: -0.19706, y: 1.7}
+  m_SizeDelta: {x: 597.86, y: 96.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152789629
 MonoBehaviour:
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1793,7 +1793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 252, y: -34}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457061173
@@ -2184,12 +2184,6 @@ MonoBehaviour:
   startConversationButton: {fileID: 1812552288}
   dialogue:
     name: Cousin Amanda
-    sentences:
-    - Hey good job, cuz!
-    - I think you're ready to carry out this racing business by yourself, yeah?
-    - If you need me, I'll be in the stable
-  dialogueTwo:
-    name: Cousin
     sentences:
     - Hey good job, cuz!
     - I think you're ready to carry out this racing business by yourself, yeah?
