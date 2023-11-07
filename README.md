@@ -20,6 +20,9 @@ You can buy up to three carrots in the shop now and use the carrots during the r
 Things added 10/16/2023 - 10/24/2023
 The number of carrots you have counts down when you use one. Your horse is now shown in the main menu and she neighs when clicked on. I also drew a race background that appears during the races.
 
+Things added 10/24/2023 - 10/31/2023
+I added horse aniamtions of various colors for the race scene and made the aniamtion play faster for the player depending on whether or not a speed boost was used.
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
@@ -29,3 +32,9 @@ Countdown timer: https://www.youtube.com/watch?v=ulxXGht5D2U
 Dialogue help: https://www.youtube.com/watch?v=_nRzoTzeyxU
 
 Camera set up: https://www.youtube.com/watch?v=2jTY11Am0Ig&list=PLPV2KyIb3jR6TFcFuzI2bB7TMNIIBpKMQ&index=5
+
+Animation set up: https://www.youtube.com/watch?v=hkaysu1Z-N8
+
+Horse neigh sound effect clip: https://www.youtube.com/watch?v=O0hvVSGQn4s
+
+Horse Gallop SFX: https://opengameart.org/content/horse-gallop-loop
