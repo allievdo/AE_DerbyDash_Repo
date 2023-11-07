@@ -23,6 +23,9 @@ The number of carrots you have counts down when you use one. Your horse is now s
 Things added 10/24/2023 - 10/31/2023
 I added horse aniamtions of various colors for the race scene and made the aniamtion play faster for the player depending on whether or not a speed boost was used.
 
+Things added 10/31/2023 - 11/07/2023
+Added a dollar sign in front of the money so you know what that number represents. Retyped race instructions in the race scene. Added a win and lose screen and added a background for the race selection scene. The dialogue changes after the first race and the buttons become available after your first race. I also added more dialogue for your cousin before the first race begins. Your cousin also gives you two carrots at the beginning of the game, since the shop is not yet available.
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
