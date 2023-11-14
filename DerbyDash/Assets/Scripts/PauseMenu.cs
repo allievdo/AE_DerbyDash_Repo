@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool GameIsPaused = false;
+    public static bool GameIsPaused = false;
 
     public GameObject pauseMenu;
 
-    private PlayerController _playerController;
+    public PlayerController playerController;
+
+    public EnemyController enemyController;
 
     private void Update()
     {
@@ -31,6 +33,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        playerController.gallop.Play();
+        enemyController.gallop.Play();
     }
 
     public void Pause()
@@ -38,6 +42,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        playerController.gallop.Stop();
+        enemyController.gallop.Stop();
     }
 
     public void LoadMenu()

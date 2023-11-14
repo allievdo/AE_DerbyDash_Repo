@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource gallop;
+
 
     void Start()
     {
@@ -35,8 +37,8 @@ public class EnemyController : MonoBehaviour
 
     void EnemyRun()
     {
-        //Debug.Log("Current enemy speed: " + enemySpeed);
         rb.velocity = new Vector2(enemySpeed, 0f);
         animator.SetFloat("Speed", enemySpeed);
+        gallop.Play();
     }
 }

@@ -15,6 +15,9 @@ public class FinishLine : MonoBehaviour
 
     public GameObject loseScreenUI;
 
+    public PlayerController playerController;
+    public EnemyController enemyController;
+
     public int raceAmount = 50;
 
     private void Start()
@@ -29,6 +32,8 @@ public class FinishLine : MonoBehaviour
             winScreenUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
+            playerController.gallop.Stop();
+            enemyController.gallop.Stop();
 
             //Debug.Log("race amount: " + raceAmount);
             //Debug.Log("GameManager current money: " + PlayerStats.instance.currentMoney);
@@ -45,6 +50,8 @@ public class FinishLine : MonoBehaviour
             loseScreenUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true; ;
+            playerController.gallop.Stop();
+            enemyController.gallop.Stop();
         } 
     }
 }

@@ -7,15 +7,14 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
     public float runningForce = 3f;
-
     public float speedBoost = 6f;
-
     public float speedCooldown;
+
+    public bool isSprinting;
 
     public Animator animator;
 
     public AudioSource gallop;
-
 
     void Update()
     {
@@ -37,20 +36,24 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(runningForce, 0f);
             animator.SetFloat("Speed", 1);
 
-            //gallop.Play();
+            isSprinting = false;
+            gallop.Play();
         }
 
         //NEW
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(isSprinting == false)
         {
-            if(PlayerStats.instance.currentCarrots > 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                CarrotDown();
+                isSprinting = true;
+                if (PlayerStats.instance.currentCarrots > 0)
+                {
+                    CarrotDown();
 
-                rb.velocity = new Vector2(speedBoost, 0f);
-                Debug.Log("Speed boost");
-                StartCoroutine(SpeedDuration());
-                animator.SetFloat("Speed", speedBoost);
+                    rb.velocity = new Vector2(speedBoost, 0f);
+                    StartCoroutine(SpeedDuration());
+                    animator.SetFloat("Speed", speedBoost);
+                }
             }
         }
 
@@ -74,20 +77,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             PlayerStats.instance.currentCarrots -= 1;//make it go down by one
-            Debug.Log("carrots down");
         }
-    }
-
-    void PlayGallop()
-    {
-        gallop.Play();
     }
 
     IEnumerator SpeedDuration()
     {
         yield return new WaitForSeconds(speedCooldown);
         rb.velocity = new Vector2(runningForce, 0f);
-
+        isSprinting = false;
     }
   /*  void FixedUpdate()
     {
