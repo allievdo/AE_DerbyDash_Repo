@@ -32,8 +32,6 @@ public class FinishLine : MonoBehaviour
             winScreenUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
-            playerController.gallop.Stop();
-            enemyController.gallop.Stop();
 
             //Debug.Log("race amount: " + raceAmount);
             //Debug.Log("GameManager current money: " + PlayerStats.instance.currentMoney);
@@ -42,6 +40,9 @@ public class FinishLine : MonoBehaviour
             //Debug.Log("GameManager current money: " + PlayerStats.instance.currentMoney);
 
             raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
+
+            playerController.gallop.Stop();
+            enemyController.gallop.Stop();
         }
 
         if (collision.tag == "Enemy")

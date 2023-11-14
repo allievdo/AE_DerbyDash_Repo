@@ -3264,7 +3264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c4ef1ca72b1b149858c855977f6e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameIsPaused: 0
   pauseMenu: {fileID: 1809109315}
   playerController: {fileID: 1255631945}
   enemyController: {fileID: 1266654712}

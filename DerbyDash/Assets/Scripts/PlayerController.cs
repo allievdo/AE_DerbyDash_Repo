@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //NEW
-        if(isSprinting == false)
+        if (isSprinting == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
