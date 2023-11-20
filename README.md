@@ -29,6 +29,9 @@ Added a dollar sign in front of the money so you know what that number represent
 Things added 11/07/2023 - 11/13/2023
 As a player, I added a dollar sign to the amount of carrots in the shop scene so that people are able to tell what that "30" means. As a player, I was tired of looking at a blue screen for the shop, so I also added a background for the shop. I temporarily disabled the stable scene and changed the dialogue for your cousin since she previously stated that she was going to wait in the stable that's no longer there. I added sound to your horse when you race so there are now hoofbeats during races that pauses when you win or pause the game. As a person who knows almost nothing about composing music, I composed music for the home scene as well and added bird sound effects to bring the scene more to life. 
 
+Things 11/13/20232 - 11/20/2023
+As a player, I would like a harder level added, so that I feel a feeling of accomplishment for finishing the medium level. 
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
