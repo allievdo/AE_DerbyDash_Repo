@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c4ef1ca72b1b149858c855977f6e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameIsPaused: 0
+  paused: 0
   pauseMenu: {fileID: 1269181352}
   playerController: {fileID: 0}
   enemyController: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 554464874}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

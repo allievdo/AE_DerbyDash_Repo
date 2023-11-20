@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public bool paused = false;
 
     public GameObject pauseMenu;
 
@@ -33,6 +34,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        paused = false;
         playerController.gallop.Play();
         enemyController.gallop.Play();
     }
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        paused = true;
         playerController.gallop.Stop();
         enemyController.gallop.Stop();
     }

@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     public int maxSpeed;
     public int minSpeed;
 
+    public FinishLine finishLine;
+    public PauseMenu pauseMenu;
+
     int enemySpeed;
 
     public Animator animator;
@@ -39,6 +42,8 @@ public class EnemyController : MonoBehaviour
     {
         rb.velocity = new Vector2(enemySpeed, 0f);
         animator.SetFloat("Speed", enemySpeed);
-        gallop.Play();
+
+        if (!gallop.isPlaying && finishLine.isSoundOff == false && pauseMenu.paused == false)
+            gallop.Play();
     }
 }

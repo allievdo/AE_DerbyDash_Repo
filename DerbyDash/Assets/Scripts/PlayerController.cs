@@ -9,8 +9,13 @@ public class PlayerController : MonoBehaviour
     public float runningForce = 3f;
     public float speedBoost = 6f;
     public float speedCooldown;
+    public float appleSpeedCooldown;
+
+    public FinishLine finishLine;
+    public PauseMenu pauseMenu;
 
     public bool isSprinting;
+    private bool hasStarted = false;
 
     public Animator animator;
 
@@ -33,43 +38,59 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
+            hasStarted = true;
+
             rb.velocity = new Vector2(runningForce, 0f);
             animator.SetFloat("Speed", 1);
 
             isSprinting = false;
-            gallop.Play();
+            if (!gallop.isPlaying && finishLine.isSoundOff == false && pauseMenu.paused == false)
+                gallop.Play();
         }
 
         //NEW
-        if (isSprinting == false)
+        if (hasStarted == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isSprinting == false)
             {
-                isSprinting = true;
-                if (PlayerStats.instance.currentCarrots > 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    CarrotDown();
+                    isSprinting = true;
+                    if (PlayerStats.instance.currentApples > 0 && PlayerStats.instance.currentCarrots > 0)
+                    {
+                        CarrotDown();
+                        AppleDown();
 
-                    rb.velocity = new Vector2(speedBoost, 0f);
-                    StartCoroutine(SpeedDuration());
-                    animator.SetFloat("Speed", speedBoost);
+                        rb.velocity = new Vector2(speedBoost, 0f);
+                        StartCoroutine(AppleSpeedDuration());
+                        animator.SetFloat("Speed", speedBoost);
+                    }
+
+                    else if (PlayerStats.instance.currentCarrots > 0 && PlayerStats.instance.currentApples <= 0)
+                    {
+                        CarrotDown();
+
+                        rb.velocity = new Vector2(speedBoost, 0f);
+                        StartCoroutine(SpeedDuration());
+                        animator.SetFloat("Speed", speedBoost);
+                    }
                 }
+
+                else
+                    animator.SetFloat("Speed", 1);
             }
+
+            //FOR TESTING PURPOSES:
+            /*if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(speedBoost, 0f);
+            } */
+
+            /* if (Input.GetKeyUp(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(runningForce, 0f);
+            } */
         }
-
-        else
-            animator.SetFloat("Speed", 1);
-
-        //FOR TESTING PURPOSES:
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(speedBoost, 0f);
-        } */
-
-        /* if (Input.GetKeyUp(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(runningForce, 0f);
-        } */
     }
 
     void CarrotDown()
@@ -80,9 +101,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void AppleDown()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            PlayerStats.instance.currentApples -= 1;//make apples go down by 1
+        }
+    }
+
     IEnumerator SpeedDuration()
     {
         yield return new WaitForSeconds(speedCooldown);
+        rb.velocity = new Vector2(runningForce, 0f);
+        isSprinting = false;
+    }
+
+    IEnumerator AppleSpeedDuration()
+    {
+        yield return new WaitForSeconds(appleSpeedCooldown);
         rb.velocity = new Vector2(runningForce, 0f);
         isSprinting = false;
     }

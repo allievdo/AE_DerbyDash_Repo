@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int currentMoney;
     public int currentCarrots;
+    public int currentApples;
 
     public static PlayerStats instance;
 
@@ -31,5 +32,10 @@ public class PlayerStats : MonoBehaviour
     public int GetCurrentCarrots()
     {
         return currentCarrots;
+    }
+
+    public int GetCurrentApples()
+    {
+        return currentApples;
     }
 }

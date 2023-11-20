@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RaceSceneMedium.unity
     guid: d6cdfb0649065214d8f703bbc5ae678d
   - enabled: 1
+    path: Assets/Scenes/RaceSceneHard.unity
+    guid: 3a80a85d2c7a2d74fb1c3854a0e4a2cc
+  - enabled: 1
     path: Assets/Scenes/RaceSelection.unity
     guid: 290696f72df8ceb46920d3a713d29a1d
   - enabled: 1
