@@ -8,10 +8,15 @@ public class HomeAudioManager : MonoBehaviour
     private void Awake()
     {
         GameObject[] homeMusic = GameObject.FindGameObjectsWithTag("Music");
-        if(homeMusic.Length > 1)
+
+        if (SceneManager.GetActiveScene().name == "HomeScene" ||  SceneManager.GetActiveScene().name == "HomeSceneMain" || SceneManager.GetActiveScene().name == "RaceSelection")
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
+        if (SceneManager.GetActiveScene().name == "RaceScene")
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 }
