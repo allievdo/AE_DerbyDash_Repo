@@ -76,6 +76,9 @@ public class FinishLine : MonoBehaviour
             loseScreenUI.SetActive(true);
             Time.timeScale = 0f;
 
+            PlayerStats.instance.currentMoney += 10;
+            raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
+
             GameIsPaused = true;
 
             playerController.gallop.Stop();

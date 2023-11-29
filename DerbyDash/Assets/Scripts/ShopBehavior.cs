@@ -24,7 +24,7 @@ public class ShopBehavior : MonoBehaviour
                 PlayerStats.instance.currentMoney -= 30;
                 raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
                 PlayerStats.instance.currentCarrots += 1;
-                numOfCarrots.text = PlayerStats.instance.currentCarrots.ToString() + " carrots";
+                numOfCarrots.text = PlayerStats.instance.currentCarrots.ToString() + "/3 carrots";
             }
         }
 
@@ -47,7 +47,7 @@ public class ShopBehavior : MonoBehaviour
                 PlayerStats.instance.currentMoney -= 100;
                 raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
                 PlayerStats.instance.currentApples += 1;
-                numOfApples.text = PlayerStats.instance.currentApples.ToString() + " apples";
+                numOfApples.text = PlayerStats.instance.currentApples.ToString() + "/1 apples";
             }
         }
 
