@@ -55,3 +55,5 @@ Horse neigh sound effect clip: https://www.youtube.com/watch?v=O0hvVSGQn4s
 Horse Gallop SFX: https://opengameart.org/content/horse-gallop-loop
 
 Bird SFX: https://www.youtube.com/watch?v=TKhOKnkxbAY&t=3s
+
+Gunshot SFX: https://www.youtube.com/watch?v=r5Qa6vi8fPE
