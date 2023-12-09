@@ -35,6 +35,9 @@ As a player, I added a harder level, so that I feel accomplished for finishing t
 Things added 11/20/2023 - 11/29/2023
 As a player, I added an indicator for how many apples and carrots you can buy, so that I am not confused when I can't buy anymore of those items even with enough money. As a player, I wanted some of the buttons to fit the theme of the game, so that I am more immersed in the game's environment. I fixed the UI in the shop to properly display how many carrots or apples you have. I also played around with colliders of your horse, so that you don't win money when you lose. I also changed some mispellings in the dialogue. As a player, I want to earn some money after I lose, so I made it so that you earn ten dollars even when you lose. As a player, I want to earn more money when completing races, so that I have more to spend on shop items.
 
+11/29/2023 - 12/09/2023:
+I created a new scene that appears after you complete the hard race. I added new dialogue to that scene as well. I also drew and added your cousin, so shse now pops up when she is speaking instead of just a dialogue text box. I added a gunshot sound effect when races start now as well. I also fixed some of the horse colliders again so hopefully it won't give you the win amount of money when you lose anymore.
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
