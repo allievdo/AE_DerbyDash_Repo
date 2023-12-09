@@ -56,4 +56,27 @@ public class ShopBehavior : MonoBehaviour
             Debug.Log("You do not have enough money for this item");
         }
     }
+
+    public void HorseShoeButtonClicked()
+    {
+        if (PlayerStats.instance.currentMoney >= 200)
+        {
+            if (PlayerStats.instance.horseShoes >= 1)
+            {
+                Debug.Log("No more horseShoes allowed");
+            }
+            else
+            {
+                PlayerStats.instance.currentMoney -= 200;
+                raceAmountText.text = "$" + PlayerStats.instance.currentMoney.ToString();
+                PlayerStats.instance.horseShoes += 1;
+                //numOfApples.text = PlayerStats.instance.currentApples.ToString() + "/1 apples";
+            }
+        }
+
+        else
+        {
+            Debug.Log("You do not have enough money for this item");
+        }
+    }
 }

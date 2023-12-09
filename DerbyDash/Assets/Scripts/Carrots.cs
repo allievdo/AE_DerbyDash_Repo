@@ -9,6 +9,6 @@ public class Carrots : MonoBehaviour
     private void Update()
     {
         carrotAmountText.text = PlayerStats.instance.currentCarrots.ToString() + " carrots";
-        Debug.Log(PlayerStats.instance.GetCurrentCarrots());
+        //Debug.Log(PlayerStats.instance.GetCurrentCarrots());
     }
 }

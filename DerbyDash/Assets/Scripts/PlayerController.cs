@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class PlayerController : MonoBehaviour
     public float speedCooldown;
     public float appleSpeedCooldown;
 
+    private float horseShoeRunningForce = 5f;
+
     public FinishLine finishLine;
     public PauseMenu pauseMenu;
 
     public bool isSprinting;
-    private bool hasStarted = false;
+    public bool hasStarted = false;
 
     public Animator animator;
 
@@ -23,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.instance.gamePlaying)
+        if (GameManager.instance.gamePlaying)
         {
             PlayerRun();
         }
@@ -33,63 +36,114 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
     void PlayerRun()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (SceneManager.GetActiveScene().name == "RaceSceneHard" && PlayerStats.instance.horseShoes > 0)
         {
-            hasStarted = true;
-
-            rb.velocity = new Vector2(runningForce, 0f);
-            animator.SetFloat("Speed", 1);
-
-            isSprinting = false;
-            if (!gallop.isPlaying && finishLine.isSoundOff == false && pauseMenu.paused == false)
-                gallop.Play();
-        }
-
-        //NEW
-        if (hasStarted == true)
-        {
-            if (isSprinting == false)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    isSprinting = true;
-                    if (PlayerStats.instance.currentApples > 0 && PlayerStats.instance.currentCarrots > 0)
-                    {
-                        CarrotDown();
-                        AppleDown();
+                hasStarted = true;
 
-                        rb.velocity = new Vector2(speedBoost, 0f);
-                        StartCoroutine(AppleSpeedDuration());
-                        animator.SetFloat("Speed", speedBoost);
-                    }
+                rb.velocity = new Vector2(horseShoeRunningForce, 0f);
+                animator.SetFloat("Speed", 1);
 
-                    else if (PlayerStats.instance.currentCarrots > 0 && PlayerStats.instance.currentApples <= 0)
-                    {
-                        CarrotDown();
-
-                        rb.velocity = new Vector2(speedBoost, 0f);
-                        StartCoroutine(SpeedDuration());
-                        animator.SetFloat("Speed", speedBoost);
-                    }
-                }
-
-                else
-                    animator.SetFloat("Speed", 1);
+                isSprinting = false;
+                if (!gallop.isPlaying && finishLine.isSoundOff == false && pauseMenu.paused == false)
+                    gallop.Play();
             }
 
-            //FOR TESTING PURPOSES:
-            /*if (Input.GetKeyDown(KeyCode.Space))
+            //NEW
+            if (hasStarted == true)
             {
-                rb.velocity = new Vector2(speedBoost, 0f);
-            } */
+                if (isSprinting == false)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        Debug.Log("Speed!");
+                        isSprinting = true;
+                        if (PlayerStats.instance.currentApples > 0 && PlayerStats.instance.currentCarrots > 0)
+                        {
+                            CarrotDown();
+                            AppleDown();
 
-            /* if (Input.GetKeyUp(KeyCode.Space))
+                            rb.velocity = new Vector2(speedBoost, 0f);
+                            StartCoroutine(AppleSpeedDuration());
+                            animator.SetFloat("Speed", speedBoost);
+                        }
+
+                        else if (PlayerStats.instance.currentCarrots > 0 && PlayerStats.instance.currentApples <= 0)
+                        {
+                            CarrotDown();
+
+                            rb.velocity = new Vector2(speedBoost, 0f);
+                            StartCoroutine(SpeedDuration());
+                            animator.SetFloat("Speed", speedBoost);
+                        }
+                    }
+
+                    else
+                        animator.SetFloat("Speed", 1);
+                }
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.D))
             {
+                hasStarted = true;
+
                 rb.velocity = new Vector2(runningForce, 0f);
-            } */
+                animator.SetFloat("Speed", 1);
+
+                isSprinting = false;
+                if (!gallop.isPlaying && finishLine.isSoundOff == false && pauseMenu.paused == false)
+                    gallop.Play();
+            }
+
+            //NEW
+            if (hasStarted == true)
+            {
+                if (isSprinting == false)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        Debug.Log("Speed!");
+                        isSprinting = true;
+                        if (PlayerStats.instance.currentApples > 0 && PlayerStats.instance.currentCarrots > 0)
+                        {
+                            CarrotDown();
+                            AppleDown();
+
+                            rb.velocity = new Vector2(speedBoost, 0f);
+                            StartCoroutine(AppleSpeedDuration());
+                            animator.SetFloat("Speed", speedBoost);
+                        }
+
+                        else if (PlayerStats.instance.currentCarrots > 0 && PlayerStats.instance.currentApples <= 0)
+                        {
+                            CarrotDown();
+
+                            rb.velocity = new Vector2(speedBoost, 0f);
+                            StartCoroutine(SpeedDuration());
+                            animator.SetFloat("Speed", speedBoost);
+                        }
+                    }
+
+                    else
+                        animator.SetFloat("Speed", 1);
+                }
+
+                //FOR TESTING PURPOSES:
+                /*if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    rb.velocity = new Vector2(speedBoost, 0f);
+                } */
+
+                /* if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    rb.velocity = new Vector2(runningForce, 0f);
+                } */
+            }
         }
     }
 
@@ -112,18 +166,28 @@ public class PlayerController : MonoBehaviour
     IEnumerator SpeedDuration()
     {
         yield return new WaitForSeconds(speedCooldown);
-        rb.velocity = new Vector2(runningForce, 0f);
+        if (SceneManager.GetActiveScene().name == "RaceSceneHard" && PlayerStats.instance.horseShoes > 0)
+        {
+            rb.velocity = new Vector2(horseShoeRunningForce, 0f);
+        }
+        else
+            rb.velocity = new Vector2(runningForce, 0f);
         isSprinting = false;
     }
 
     IEnumerator AppleSpeedDuration()
     {
         yield return new WaitForSeconds(appleSpeedCooldown);
-        rb.velocity = new Vector2(runningForce, 0f);
+        if (SceneManager.GetActiveScene().name == "RaceSceneHard" && PlayerStats.instance.horseShoes > 0)
+        {
+            rb.velocity = new Vector2(horseShoeRunningForce, 0f);
+        }
+        else
+            rb.velocity = new Vector2(runningForce, 0f);
         isSprinting = false;
     }
-  /*  void FixedUpdate()
-    {
-       rb.velocity = new Vector2(runningForce, 0f);
-    } */
+    /*  void FixedUpdate()
+      {
+         rb.velocity = new Vector2(runningForce, 0f);
+      } */
 }

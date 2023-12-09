@@ -16,6 +16,29 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public int textCount;
+
+    public GameObject amandaSprite;
+    public Image image;
+
+    public Sprite AddImageNormal()
+    {
+        return Resources.Load<Sprite>("Amanda_Normal");
+    }
+    public Sprite AddImageReallyHappy()
+    {
+        return Resources.Load<Sprite>("Amanda_BigSmile");
+    }
+
+    public Sprite AddImageFrown()
+    {
+        return Resources.Load<Sprite>("Amanda_Frowning");
+    }
+
+    public Sprite AddImageSilly()
+    {
+        return Resources.Load<Sprite>("Amanda_Silly");
+    }
     //NEW 10/02/2023
     //public bool raceOneEnded = false;
 
@@ -23,25 +46,11 @@ public class DialogueManager : MonoBehaviour
 
     public Queue<string> sentences;
 
-    //public static DialogueManager instance;
-
-    //NEW
-    //private void Awake()
-    //{
-    //    if (instance == null)
-    //    {
-    //        instance = this;
-    //        DontDestroyOnLoad(this);
-    //    }
-    //    else
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //}
-
     void Start()
     {
+        amandaSprite.SetActive(false);
         sentences = new Queue<string>();
+        textCount = 0;
     }
 
     public void StartDialogue (Dialogue dialogue)
@@ -60,42 +69,108 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    //NEW 10/03/2023
-    //Sentence 2
-    //public void StartDialogueTwo (Dialogue dialogueTwo)
-    //{
-    //    if (raceOneEnded == true)
-    //    {
-    //        OnDialogueOpen?.Invoke(true);
-
-    //        OnDialogueName?.Invoke(dialogueTwo.name);
-
-    //        sentences.Clear();
-
-    //        foreach (string sentence in dialogueTwo.sentences)
-    //        {
-    //            sentences.Enqueue(sentence);
-    //        }
-
-    //        DisplayNextSentence();
-    //    }
-    //}
-
     public void DisplayNextSentence ()
     {
         if (SceneManager.GetActiveScene().name == "HomeSceneMain")
         {
+            textCount++;
+            if(textCount == 1)
+            {
+                amandaSprite.SetActive(true);
+                AddImageReallyHappy();
+                image.sprite = AddImageReallyHappy();
+            }
+
+            if(textCount == 2)
+            {
+                AddImageNormal();
+                image.sprite = AddImageNormal();
+            }
+
+            if(textCount == 4)
+            {
+                AddImageSilly();
+                image.sprite = AddImageSilly();
+            }
+
             if (sentences.Count == 0)
             {
+                textCount = 0;
+                amandaSprite.SetActive(false);
                 EndDialogue();
                 return;
             }
         }
 
-        else
+        if(SceneManager.GetActiveScene().name == "HomeSceneCompleteHard")
         {
+            textCount++;
+            if (textCount == 1)
+            {
+                amandaSprite.SetActive(true);
+                AddImageReallyHappy();
+                image.sprite= AddImageReallyHappy();
+            }
+
+            if(textCount == 2)
+            {
+                AddImageSilly();
+                image.sprite= AddImageSilly();
+            }
+
+            if(textCount == 3)
+            {
+                AddImageNormal();
+                image.sprite = AddImageNormal();
+            }
+            
+
+            if(textCount == 5)
+            {
+                AddImageReallyHappy();
+                image.sprite= AddImageSilly();
+            }
+
             if (sentences.Count == 0)
             {
+                textCount = 0;
+                amandaSprite.SetActive(false);
+                EndDialogue();
+                return;
+            }
+        }
+
+        if(SceneManager.GetActiveScene().name == "HomeScene")
+        {
+            textCount++;
+            if (textCount == 1)
+            {
+                amandaSprite.SetActive(true);
+                AddImageReallyHappy();
+                image.sprite = AddImageReallyHappy();
+            }
+
+            if(textCount == 2)
+            {
+                AddImageFrown();
+                image.sprite = AddImageFrown();
+            }
+
+            if (textCount == 3)
+            {
+                AddImageNormal();
+                image.sprite = AddImageNormal();
+            }
+
+            if( textCount == 6)
+            {
+                AddImageSilly();
+                image.sprite = AddImageSilly();
+            }
+
+            if (sentences.Count == 0)
+            {
+                textCount = 0;
                 EndDialogue();
                 SceneManager.LoadScene("RaceScene");
                 return;
@@ -109,7 +184,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        Debug.Log("Continue dialogue");
+        //Debug.Log("Continue dialogue");
         string dialogueText = "";
 
         foreach( char letter in sentence.ToCharArray() )
@@ -123,9 +198,5 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue ()
     {
         OnDialogueOpen?.Invoke(false);
-
-        //NEW 10/03/2023
-        //raceOneEnded = true;
-        //Debug.Log("Race one ended = true");
     }
 }

@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public Text countdownText;
     public int countdownTime;
+
+    public AudioSource gunshot;
     public bool gamePlaying { get; private set; }
 
     private void Awake()
@@ -27,12 +29,14 @@ public class GameManager : MonoBehaviour
     }
     private void BeginGame()
     {
+        gunshot.Play();
         gamePlaying = true;
     }
     IEnumerator CountdownToStart()
     {
         while (countdownTime > 0)
         {
+            //add sound: 
             //Debug.Log("HELLO???? Time");
             countdownText.text = countdownTime.ToString();
             yield return new WaitForSeconds(1f);

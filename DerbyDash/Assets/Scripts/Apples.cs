@@ -9,6 +9,6 @@ public class Apples : MonoBehaviour
     private void Update()
     {
         appleAmountText.text = PlayerStats.instance.currentApples.ToString() + " apples";
-        Debug.Log(PlayerStats.instance.GetCurrentApples());
+        //Debug.Log(PlayerStats.instance.GetCurrentApples());
     }
 }

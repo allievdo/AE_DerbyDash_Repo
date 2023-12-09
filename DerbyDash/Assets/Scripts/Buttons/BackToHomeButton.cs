@@ -7,6 +7,13 @@ public class BackToHomeButton : MonoBehaviour
 {
     public void GoBack()
     {
-        SceneManager.LoadScene("HomeSceneMain");
+        if (FinishLine.isHardRaceWon)
+        {
+            SceneManager.LoadScene("HomeSceneCompleteHard");
+        }
+        else
+        {
+            SceneManager.LoadScene("HomeSceneMain");
+        }
     }
 }
