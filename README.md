@@ -32,6 +32,9 @@ As a player, I added a dollar sign to the amount of carrots in the shop scene so
 Things 11/13/20232 - 11/20/2023
 As a player, I added a harder level, so that I feel accomplished for finishing the medium level. You can no longer sprint at the start, you have to press D first before you do anything else. As a person who wants more to the game, I added apples to the game, so that the shop has more of a variety and so that there are more power ups in the game. Apples make it so that you have a longer speed boost, so you can only buy one at a time. I also fixed the sound of the horses' gallop so that enemy horses now make a sound when they run.
 
+Things added 11/20/2023 - 11/29/2023
+As a player, I added an indicator for how many apples and carrots you can buy, so that I am not confused when I can't buy anymore of those items even with enough money. As a player, I wanted some of the buttons to fit the theme of the game, so that I am more immersed in the game's environment. I fixed the UI in the shop to properly display how many carrots or apples you have. I also played around with colliders of your horse, so that you don't win money when you lose. I also changed some mispellings in the dialogue. As a player, I want to earn some money after I lose, so I made it so that you earn ten dollars even when you lose. As a player, I want to earn more money when completing races, so that I have more to spend on shop items.
+
 Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
