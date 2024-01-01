@@ -40,7 +40,7 @@ As a player, I added an indicator for how many apples and carrots you can buy, s
 11/29/2023 - 12/09/2023:
 I created a new scene that appears after you complete the hard race. I added new dialogue to that scene as well. I also drew and added your cousin, so shse now pops up when she is speaking instead of just a dialogue text box. I added a gunshot sound effect when races start now as well. I also fixed some of the horse colliders again so hopefully it won't give you the win amount of money when you lose anymore.
 
-Video tutorials used:
+# Video tutorials used:
 
 Pause menu: https://www.youtube.com/watch?v=JivuXdrIHK0&t=572s
 
@@ -52,6 +52,7 @@ Camera set up: https://www.youtube.com/watch?v=2jTY11Am0Ig&list=PLPV2KyIb3jR6TFc
 
 Animation set up: https://www.youtube.com/watch?v=hkaysu1Z-N8
 
+# Sound effects used:
 Horse neigh sound effect clip: https://www.youtube.com/watch?v=O0hvVSGQn4s
 
 Horse Gallop SFX: https://opengameart.org/content/horse-gallop-loop
